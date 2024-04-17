@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Artists">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ArtistName" Type="nchar" MaxLength="150" />
+          <Property Name="ArtistName" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Clients">
           <Key>
@@ -24,30 +24,30 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OborydName" Type="nchar" MaxLength="150" />
+          <Property Name="OborydName" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StatusName" Type="nchar" MaxLength="150" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Type">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TypeName" Type="nchar" MaxLength="150" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UsersLogin" Type="nchar" MaxLength="150" />
-          <Property Name="UsersPassword" Type="nchar" MaxLength="150" />
-          <Property Name="UsersRole" Type="nchar" MaxLength="150" />
+          <Property Name="UsersLogin" Type="nvarchar" MaxLength="150" />
+          <Property Name="UsersPassword" Type="nvarchar" MaxLength="150" />
+          <Property Name="UsersRole" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="Zayavka">
           <Key>
@@ -153,7 +153,8 @@
             <End Role="Zayavka" EntitySet="Zayavka" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -162,7 +163,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ArtistName" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="ArtistName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Zayavka" Relationship="Self.FK__Zayavka__Zayavka__4316F928" FromRole="Artists" ToRole="Zayavka" />
         </EntityType>
         <EntityType Name="Clients">
@@ -178,7 +179,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OborydName" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="OborydName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Zayavka" Relationship="Self.FK__Zayavka__Zayavka__440B1D61" FromRole="Oboryd" ToRole="Zayavka" />
         </EntityType>
         <EntityType Name="Status">
@@ -186,7 +187,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StatusName" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="StatusName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Zayavka" Relationship="Self.FK__Zayavka__Zayavka__44FF419A" FromRole="Status" ToRole="Zayavka" />
         </EntityType>
         <EntityType Name="Type">
@@ -194,7 +195,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TypeName" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="TypeName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Zayavka" Relationship="Self.FK__Zayavka__Zayavka__45F365D3" FromRole="Type" ToRole="Zayavka" />
         </EntityType>
         <EntityType Name="Users">
@@ -202,9 +203,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UsersLogin" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
-          <Property Name="UsersPassword" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
-          <Property Name="UsersRole" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="UsersLogin" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UsersPassword" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UsersRole" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Zayavka">
           <Key>
