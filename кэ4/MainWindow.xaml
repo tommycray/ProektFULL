@@ -1,0 +1,17 @@
+﻿<Window x:Class="кэ4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:кэ4"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="400" Width="400">
+    <Grid>
+        <Label Content="Логин:" HorizontalAlignment="Left" Height="37" Margin="112,66,0,0" VerticalAlignment="Top" Width="74" FontSize="20"/>
+        <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Height="31" Margin="112,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" FontSize="20"/>
+        <Button x:Name="bntEntry" Content="Войти" HorizontalAlignment="Center" Height="49" Margin="0,284,0,0" VerticalAlignment="Top" Width="176" FontSize="20" Click="bntEntry_Click"/>
+        <Label Content="Пароль:" HorizontalAlignment="Left" Height="37" Margin="112,156,0,0" VerticalAlignment="Top" Width="83" FontSize="20"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="31" Margin="112,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" FontSize="20"/>
+
+    </Grid>
+</Window>
